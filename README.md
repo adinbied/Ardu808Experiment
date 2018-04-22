@@ -13,4 +13,5 @@ The codebase for my project involving a GPS Tracker, Camera, and GPRS transmitte
  - `<dbuser>` on line 4 of index.php 
  - `<dbpass>` on line 5 of index.php 
  - `<dbname>` on line 6 of index.php
+ - `<centercoords>` on line 27 of map.html
  - `<apikey>` on line 76 of map.html
