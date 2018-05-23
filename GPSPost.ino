@@ -40,19 +40,23 @@ void setup() {
   Serial.println(F("Enabling GPS..."));
   fona.enableGPS(true);
   
-  // Print SIM card IMEI number.
+ // Print SIM card IMEI number.
   char imei[16] = {0}; // MUST use a 16 character buffer for IMEI!
   uint8_t imeiLen = fona.getIMEI(imei);
   if (imeiLen > 0) {
     Serial.print("SIM card IMEI: "); Serial.println(imei);
   }
+  
+        if (!fona.enableGPRS(false))
+          Serial.println(F("Failed to turn off"));
+        
         // turn GPRS on
         if (!fona.enableGPRS(true)) {
           Serial.println(F("Failed to turn on"));
 }
 }
 void loop() {
-  delay(8000);
+  delay(9500);
 
   float latitude, longitude, speed_kph, heading, speed_mph, altitude;
 
